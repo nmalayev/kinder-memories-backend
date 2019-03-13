@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :type
       t.string :title
       t.text :description
-      t.text :letter
+      t.text :letter, default: ""
       t.references :timeline, foreign_key: true
       t.string :poster
 
