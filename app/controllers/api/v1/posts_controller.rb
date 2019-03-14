@@ -32,7 +32,7 @@ class Api::V1::PostsController < ApplicationController
   private
 
   def post_params
-    params.permit(:post_type, :title, :description, :letter, :timeline_id, :poster)
+    params.permit(:post_type, :title, :description, :letter, :image, :video, :timeline_id, :user_id)
   end
 
   def find_post
