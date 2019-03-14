@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_14_214105) do
+ActiveRecord::Schema.define(version: 2019_03_14_222354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_03_14_214105) do
     t.string "title"
     t.text "description"
     t.text "letter", default: ""
-    t.string "image", default: ""
+    t.string "photo", default: ""
     t.string "video", default: ""
     t.bigint "timeline_id"
     t.bigint "user_id"
