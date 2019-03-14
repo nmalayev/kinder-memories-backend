@@ -8,4 +8,5 @@ class Post < ApplicationRecord
   # default value for letter to be ''
 
   belongs_to :timeline
+  belongs_to :user
 end

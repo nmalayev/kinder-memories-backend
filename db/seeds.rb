@@ -11,9 +11,11 @@ Timeline.destroy_all
 User.destroy_all
 
 u1 = User.create(name: 'u1')
+u2 = User.create(name: 'u2')
 
-t1 = Timeline.create(name: 't1',birthday: DateTime.new(2018,4,13), user: u1)
+t1 = Timeline.create(name: 't1',birthday: DateTime.new(2018,4,13))
 
-p1 = Post.create(post_type: 'photo', title: 'first picture', description: 'first time took picture of you', timeline: t1, poster: 'parent')
-p2 = Post.create(post_type: 'video', title: 'first video', description: 'first time took video of you', timeline: t1, poster: 'parent')
-p3 = Post.create(post_type: 'letter', title: 'first letter', description: 'first letter to you', timeline: t1, poster: 'parent')
+p1 = Post.create(post_type: 'photo', title: 'first picture', description: 'first time took picture of you', timeline: t1, poster: 'parent', user: u1)
+p2 = Post.create(post_type: 'video', title: 'first video', description: 'first time took video of you', timeline: t1, poster: 'parent', user: u1)
+p3 = Post.create(post_type: 'letter', title: 'first letter', description: 'first letter to you', timeline: t1, poster: 'parent', user: u2)
+p4 = Post.create(post_type: 'letter', title: 'second letter', description: 'second letter to you', timeline: t1, poster: 'parent', user: u2)
