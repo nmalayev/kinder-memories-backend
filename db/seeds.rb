@@ -10,12 +10,12 @@ Post.destroy_all
 Timeline.destroy_all
 User.destroy_all
 
-u1 = User.create(name: 'u1')
-u2 = User.create(name: 'u2')
+u1 = User.create(name: 'u1', relation: 'parent')
+u2 = User.create(name: 'u2', relation: 'parent')
 
 t1 = Timeline.create(name: 't1',birthday: DateTime.new(2018,4,13))
 
-p1 = Post.create(post_type: 'photo', title: 'first picture', description: 'first time took picture of you', timeline: t1, poster: 'parent', user: u1)
-p2 = Post.create(post_type: 'video', title: 'first video', description: 'first time took video of you', timeline: t1, poster: 'parent', user: u1)
-p3 = Post.create(post_type: 'letter', title: 'first letter', description: 'first letter to you', timeline: t1, poster: 'parent', user: u2)
-p4 = Post.create(post_type: 'letter', title: 'second letter', description: 'second letter to you', timeline: t1, poster: 'parent', user: u2)
+p1 = Post.create(post_type: 'photo', title: 'first tooth', description: 'first tooth', timeline: t1, user: u1, photo: 'https://lh3.googleusercontent.com/nhdTOsRzPCtuI0O9RWzKUKevIwHlhnYt7fP-dIRU9DNqIdwv-r5lcZORdplnKGaR_PCA5xNgp4mRkTxvXh3FnJPMXMIt21U5c_v4kiwUxODJqJB0YLqN6QGRATsRDDS0-UjvnpF8w6DKYoM3WGkPHUnNJhMRaL2JORTmTRiYgroGE6Hbv_Mp28NYEnhbYBoHCHf5AFacb1lgBSMUS20PxPCysW9qwY6reYcNS8qcPRD5vCkuMbYm43roQeng7bdrSoQw_ntmE4aVvAsOmQl_eUyM3Bm4qTB2Ncx-fgH1VL8I1yX09CTwrCGVdvUCIByZF4T5IOMKwvCWS7UsFVKc3k5BnrlRp7-FmoXl4dpJBo-9sbWKshJz85vqEC60MRru8WOnuLAaSoh-55vGka9853VGAuJKF-Eo4gXCLRRiEluSfMMfhmjRWJ7h_jNOGyHAsbfXmVh6A03D5oasCl9vaFPqB-uEY2P2-T2tVea_ULgSe0yzOY6lTQ0F0zearcENP5JnRI8-CHRBK3FJowkZF7R_zwpH_bvflQXxoqIwwbaWelLDx2AvTIKvCOPadBrvUnbDwVwsnrqJL0R4GCR-h2a6Qa53R6owfMXaJgKihfGhniCa7DVxa4baWCOAKC7q-ywC87U77hl3nVaP1JATtCX-7c7ctMYo=w1598-h2130-no')
+p2 = Post.create(post_type: 'video', title: 'first time feeding papa', description: 'first time you fed your dad with a spoon', timeline: t1, user: u1, video: 'https://photos.google.com/share/AF1QipNelBKpEmJzZtVDBn5xg1MJUFE5Ue00ruTE56Pq8ltYujiPsSbXnHytFG4-dO5W6g/photo/AF1QipMa-TQbhfQcrwgWAIKz3q3jEuPq49pe5V5Xj0P5?key=c0lhbFBHVXJqTmV4Y3BaUUt2akFnWnA4aVhKMDh3')
+p3 = Post.create(post_type: 'letter', title: 'first letter', description: 'first letter to you', timeline: t1, user: u2)
+p4 = Post.create(post_type: 'letter', title: 'second letter', description: 'second letter to you', timeline: t1, user: u2)
