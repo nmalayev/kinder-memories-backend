@@ -6,7 +6,11 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(game_params)
+    # byebug
+    @post = Post.new(post_params)
+    @post.timeline = Timeline.first
+    @post.user = User.first
+    @post.save
     render json: @post, status: :ok
   end
 
@@ -32,7 +36,7 @@ class Api::V1::PostsController < ApplicationController
   private
 
   def post_params
-    params.permit(:post_type, :title, :description, :letter, :photo, :video, :timeline_id, :user_id, :memory_date)
+    params.require(:post).permit(:post_type, :title, :description, :letter, :photo, :video, :timeline_id, :user_id, :memory_date)
   end
 
   def find_post
