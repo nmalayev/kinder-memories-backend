@@ -10,12 +10,13 @@ class Api::V1::PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.timeline = Timeline.first
     @post.user = User.first
+    @post.file.attach(params[:file])
     @post.save
     render json: @post, status: :ok
   end
 
   def show
-    render json: @post, status: :ok
+    render json: @post, methods: :file_url
   end
   # Methods below are not currently needed for MVP:
   
@@ -36,7 +37,7 @@ class Api::V1::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:post_type, :title, :description, :letter, :photo, :video, :timeline_id, :user_id, :memory_date)
+    params.permit(:post_type, :title, :description, :letter, :photo, :video, :timeline_id, :user_id, :memory_date)
   end
 
   def find_post
