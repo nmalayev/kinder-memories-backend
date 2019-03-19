@@ -16,7 +16,7 @@ class Api::V1::PostsController < ApplicationController
     if params[:file] != 'undefined' 
       @post.file.attach(params[:file])
     end
-    @post.save
+    @post.save 
     render json: @post, status: :ok
   end
 
