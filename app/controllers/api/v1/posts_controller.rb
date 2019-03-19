@@ -10,7 +10,12 @@ class Api::V1::PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.timeline = Timeline.first
     @post.user = User.first
-    @post.file.attach(params[:file])
+    
+    # If a letter is uploaded, no file is present, therefore don't attach a file and cause failed validation 
+    # b/c file = 'undefined'
+    if params[:file] != 'undefined' 
+      @post.file.attach(params[:file])
+    end
     @post.save
     render json: @post, status: :ok
   end
