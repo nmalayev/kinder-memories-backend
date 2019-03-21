@@ -8,7 +8,8 @@ class Api::V1::UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
-      render json: @user, status: :accepted
+      jwt = encode_token(@user)
+      render json: {user: @user, jwt: jwt}, status: :accepted
     else
       render json: { errors: @user.errors.full_messages }, status: :unprocessible_entity
     end
