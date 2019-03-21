@@ -11,7 +11,12 @@ class Api::V1::AuthController < ApplicationController
   end
 
   def auto_login
-    render json: curr_user
+    if logged_in?
+      render json: curr_user
+    else
+      # Error handling if faulty JWT token is sent
+      render json: {errors: "No user to auto login"}
+    end
   end
 
 end
