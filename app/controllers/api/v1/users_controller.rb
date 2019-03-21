@@ -6,8 +6,12 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(game_params)
-    render json: @user, status: :ok
+    @user = User.create(user_params)
+    if @user.save
+      render json: @user, status: :accepted
+    else
+      render json: { errors: @user.errors.full_messages }, status: :unprocessible_entity
+    end
   end
 
   def show
@@ -33,7 +37,7 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:name)
+    params.permit(:name, :username, :password, :relation)
   end
 
   def find_user

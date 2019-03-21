@@ -3,4 +3,6 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :timelines, through: :posts
+
+  has_secure_password
 end
