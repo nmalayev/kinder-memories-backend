@@ -6,10 +6,11 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def create
-    # byebug
+    byebug
     @post = Post.new(post_params)
     @post.timeline = Timeline.first
-    @post.user = User.first
+    # curr_user defined in auth_controller and application_controller
+    @post.user = curr_user 
     
     # If a letter is uploaded, no file is present, therefore don't attach a file and cause failed validation 
     # b/c file = 'undefined'
