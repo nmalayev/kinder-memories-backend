@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
   
   def encode_token(user)
-    JWT.encode({user_id: user.id}, 'super_secret')
+    JWT.encode({user_id: user.id}, ENV["JWT_KEY"])
   end
 
   def token
@@ -10,7 +10,7 @@ class ApplicationController < ActionController::API
 
   def decoded_token
     begin
-      JWT.decode(token, 'super_secret')[0]['user_id']
+      JWT.decode(token, ENV["JWT_KEY"])[0]['user_id']
     rescue
       nil
     end
