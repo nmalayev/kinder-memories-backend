@@ -1,10 +1,10 @@
 Post.destroy_all
-Timeline.destroy_all
 User.destroy_all
+Timeline.destroy_all
 
 u1 = User.create(name: 'Nison', username: 'nmalayev@gmail.com', password:'123', relation: 'parent')
 
-t1 = Timeline.create(name: 't1',birthday: DateTime.new(2018,4,13,18,44,0,'-4'))
+t1 = Timeline.create(name: 'Eliana',birthday: DateTime.new(2018,4,13,18,44,0,'-4'))
 
 p1 = Post.create(post_type: 'photo', title: 'first tooth', description: 'first tooth', timeline: t1, user: u1, photo: '', memory_date: DateTime.new(2018,6,15))
 p2 = Post.create(post_type: 'video', title: 'first time feeding papa', description: 'first time you fed your dad with a spoon', timeline: t1, user: u1, video: '', memory_date: DateTime.new(2018,7,15))
@@ -17,3 +17,5 @@ p8 = Post.create(post_type: 'letter', title: 'second letter', description: 'seco
 p9 = Post.create(post_type: 'letter', title: 'second letter', description: 'second letter to you', timeline: t1, user: u1, memory_date: DateTime.new(2018,11,15))
 p10 = Post.create(post_type: 'letter', title: 'second letter', description: 'second letter to you', timeline: t1, user: u1, memory_date: DateTime.new(2018,12,15))
 
+p1.file.attach(io: File.open('/Users/nison/Documents/peas.jpg'), filename: 'peas.jpg')
+p2.file.attach(io: File.open('/Users/nison/Desktop/cats.mp4'), filename: 'peas.jpg')
