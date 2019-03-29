@@ -40,7 +40,7 @@ User.all.each do |u|
   post = Post.create(post_type: 'photo', title: 'first tooth', description: 'first tooth', timeline: t1, user: u, photo: '', memory_date: DateTime.new(2018,6,15))
   post.file.attach(io: File.open('/Users/nison/Desktop/steve-harvey-698868-unsplash.jpg'), filename: 'pic.jpg')
 
-  post2 = Post.create(post_type: 'video', title: 'first time feeding papa', description: 'first time you fed your dad with a spoon', timeline: t1, user: u1, video: '', memory_date: DateTime.new(2018,7,15))
+  post2 = Post.create(post_type: 'video', title: 'first time feeding papa', description: 'first time you fed your dad with a spoon', timeline: t1, user: u, video: '', memory_date: DateTime.new(2018,7,15))
   post2.file.attach(io: File.open('/Users/nison/Desktop/cats.mp4'), filename: 'cats.mp4')
 end
 
