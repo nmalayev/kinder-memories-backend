@@ -11,26 +11,25 @@ u3 = User.create(name: 'Joey', username: 'joey@gmail.com', password:'123', relat
 u4 = User.create(name: 'Phoebe', username: 'phoebe@gmail.com', password:'123', relation: 'aunt')
 u5 = User.create(name: 'Monica', username: 'monica@gmail.com', password:'123', relation: 'aunt')
 u6 = User.create(name: 'Chandler', username: 'chandler@gmail.com', password:'123', relation: 'uncle')
-u7 = User.create(name: 'Rachel', username: 'rachel@gmail.com', password:'123', relation: 'aunt')
-u8 = User.create(name: 'Ross', username: 'ross@gmail.com', password:'123', relation: 'uncle')
 
 # Grandparents
-u9 = User.create(name: 'Arnold', username: 'arnols@gmail.com', password:'123', relation: 'grandparent')
-u10 = User.create(name: 'Gerald', username: 'gerald@gmail.com', password:'123', relation: 'grandparent')
-u11 = User.create(name: 'Helga', username: 'helga@gmail.com', password:'123', relation: 'grandparent')
-u12 = User.create(name: 'Lila', username: 'lila@gmail.com', password:'123', relation: 'grandparent')
+u7 = User.create(name: 'Arnold', username: 'arnols@gmail.com', password:'123', relation: 'grandparent')
+u8 = User.create(name: 'Gerald', username: 'gerald@gmail.com', password:'123', relation: 'grandparent')
+u9 = User.create(name: 'Helga', username: 'helga@gmail.com', password:'123', relation: 'grandparent')
+u10 = User.create(name: 'Lila', username: 'lila@gmail.com', password:'123', relation: 'grandparent')
+
+
+
+u11 = User.create(name: 'Tommy', username: 'tommy@gmail.com', password:'123', relation: 'sibling')
+u12 = User.create(name: 'Angelica', username: 'angelica@gmail.com', password:'123', relation: 'sibling')
 
 # Friends
 
 # Siblings
 
-u13 = User.create(name: 'Tommy', username: 'tommy@gmail.com', password:'123', relation: 'sibling')
-u14 = User.create(name: 'Chuckie', username: 'chuckie@gmail.com', password:'123', relation: 'sibling')
-u15 = User.create(name: 'Angelica', username: 'angelica@gmail.com', password:'123', relation: 'sibling')
-
 # Cousins
 
-# Creating timeling
+# Creating timeline
 t1 = Timeline.create(name: 'Eliana',birthday: DateTime.new(2018,4,13,18,44,0,'-4'))
 
 
