@@ -2,7 +2,10 @@
 
 An interactive scrapbook timeline for parents to manage special memories of their children. Users post memories as photos, videos, or letters for a child and loved ones to look back on, and provide their relation allowing for sorting by relation and memory type.
 
-Created by Nison Malayev. </br>
+Created by Nison Malayev.
+
+[Demo](https://delivr.com/2256q)
+
 [Frontend Repo](https://github.com/nmala/kinder-memories-frontend)
 
 # Concept
