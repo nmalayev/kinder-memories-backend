@@ -10,7 +10,7 @@ Created by Nison Malayev.
 
 # Concept
 
-My wife and I had our first babyin 2018, and with the baby came hundreds of photos and videos of our special memories. We had no easy way to organize these memories - there are hashtags, tags in Google Photos, albums, scrapbooks, baby logs, etc. We also wanted to incorporate a way for our child to look back on these special memories as she gets older. Some brainstorming produced this project - Kinder Memories.
+My wife and I had our first baby in 2018, and with the baby came hundreds of photos and videos of our special memories. We had no easy way to organize these memories - there are hashtags, tags in Google Photos, albums, scrapbooks, baby logs, etc. We also wanted to incorporate a way for our child to look back on these special memories as she gets older. Some brainstorming produced this project - Kinder Memories.
 
 Kinder Memories is a double entendre - 'kinder' as in loving and warm, and 'kinder' for the German word for children.
 
