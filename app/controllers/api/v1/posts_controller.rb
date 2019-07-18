@@ -10,6 +10,7 @@ class Api::V1::PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.timeline = Timeline.first
     # curr_user defined in auth_controller and application_controller
+    # Automatically assign the post creator as the current logged in user
     @post.user = curr_user 
     
     # If a letter is uploaded, no file is present, therefore don't attach a file and 
@@ -22,7 +23,7 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def show
-    render json: @post, methods: :file_url
+    render json: @post, methods: :file_url # file_url in posts.rb
   end
   # Methods below are not currently needed for MVP:
   

@@ -1,5 +1,6 @@
 class Api::V1::UsersController < ApplicationController
   before_action :find_user, only: [:update, :show]
+  
   def index
     @users = User.all
     render json: @users
@@ -8,7 +9,7 @@ class Api::V1::UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
-      jwt = encode_token(@user)
+      jwt = encode_token(@user) # in application_controller.rb
       # response.jwt used in setCurrentUser fn in FE
       render json: {user: @user, jwt: jwt}, status: :accepted
     else
