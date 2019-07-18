@@ -20,21 +20,6 @@ class Api::V1::UsersController < ApplicationController
   end
   # Methods below are not currently needed for MVP:
   
-  def update
-    @user.update(user_params)
-    if @user.save
-      render json: @user, status: :accepted
-    else
-      render json: { errors: @user.errors.full_messages }, status: :unprocessible_entity
-    end
-  end
-
-
-
-  def destroy
-    @user.destroy
-  end
-
   private
 
   def user_params
