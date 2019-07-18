@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   Rails.application.routes.draw do
     namespace :api do
       namespace :v1 do
-        resources :posts, only: [:index, :update, :create, :show]
-        resources :users, only: [:index, :show, :create, :show]
+        resources :posts, only: [:index, :create, :show]
+        resources :users, only: [:create, :show]
         post '/login', to: 'auth#create'
         get '/auto_login', to: 'auth#auto_login'
       end
