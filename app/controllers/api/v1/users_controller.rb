@@ -9,6 +9,7 @@ class Api::V1::UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save
       jwt = encode_token(@user)
+      # response.jwt used in setCurrentUser fn in FE
       render json: {user: @user, jwt: jwt}, status: :accepted
     else
       render json: { errors: @user.errors.full_messages }, status: :unprocessible_entity
