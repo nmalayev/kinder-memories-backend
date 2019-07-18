@@ -19,7 +19,6 @@ class Api::V1::UsersController < ApplicationController
   def show
     render json: @user, status: :ok
   end
-  # Methods below are not currently needed for MVP:
   
   private
 
